@@ -30,12 +30,16 @@ test('mês todo foi usado', () => {
 // 		0,
 // 		0,
 // 	])).toBe(400)
-	
+
 // })
 
 test('cliente novo', () => {
 	expect(VerificarPlano(10, 0, [
-		
 	])).toBe(10)
+})
 
+test('primeiro mes', () => {
+	expect(VerificarPlano(10, 1, [
+		1
+	])).toBe(19)
 })

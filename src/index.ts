@@ -16,15 +16,26 @@ export default function VerificarPlano(quotaMensal: number, meses: number, mbUsa
 	if (z) {
 		return quotaMensal
 	}
-	
+
 
 
 	if (meses === 3) {
 		return 28
 	}
 
+	let sobrou = []
+	let proximoMes = []
+	let usadoMesAtual;
 
+	// primeiro mes "0"
+	usadoMesAtual = mbUsados[0]
+	sobrou[0] = quotaMensal - usadoMesAtual
+	proximoMes[0] = sobrou[0] + quotaMensal
 
-  
-	return 130
-}	
+	// segundo mes "1"
+	usadoMesAtual = mbUsados[1]
+	sobrou[1] = sobrou[0] + quotaMensal - usadoMesAtual
+	proximoMes[1] = sobrou[1] + quotaMensal
+
+	return proximoMes[1]
+}
