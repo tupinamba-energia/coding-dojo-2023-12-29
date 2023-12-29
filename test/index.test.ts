@@ -15,3 +15,10 @@ test('Teste VerificarPlano', () => {
 		2,
 	])).toBe(28)
 })
+
+test('mês todo foi usado', () => {
+	expect(VerificarPlano(100, 2, [
+		100,
+		100,
+	])).toBe(100)
+})
