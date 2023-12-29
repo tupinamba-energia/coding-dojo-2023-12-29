@@ -19,19 +19,28 @@ export default function VerificarPlano(quotaMensal: number, meses: number, mbUsa
 		return 28
 	}
 
-	let sobrou = []
-	let proximoMes = []
+	let sobrou: number[] = []
+	let proximoMes: number[] = []
 	let usadoMesAtual;
 
-	// primeiro mes "0"
-	usadoMesAtual = mbUsados[0]
-	sobrou[0] = quotaMensal - usadoMesAtual
-	proximoMes[0] = sobrou[0] + quotaMensal
+	// // primeiro mes "0"
+	// usadoMesAtual = mbUsados[0]
+	// sobrou[0] = quotaMensal - usadoMesAtual
+	// proximoMes[0] = sobrou[0] + quotaMensal
 
-	// segundo mes "1"
-	usadoMesAtual = mbUsados[1]
-	sobrou[1] = sobrou[0] + quotaMensal - usadoMesAtual
-	proximoMes[1] = sobrou[1] + quotaMensal
+	// // segundo mes "1"
+	// usadoMesAtual = mbUsados[1]
+	// sobrou[1] = sobrou[0] + quotaMensal - usadoMesAtual
+	// proximoMes[1] = sobrou[1] + quotaMensal
 
+	mbUsados.forEach((u, i) => {
+		usadoMesAtual = u
+		if(i === 0){
+			sobrou[i] = quotaMensal - usadoMesAtual
+		} else {
+			sobrou[i] = sobrou[i-1] + quotaMensal - usadoMesAtual
+		}
+		proximoMes[i] = sobrou[i] + quotaMensal
+	})
 	return proximoMes[meses -1]
 }
