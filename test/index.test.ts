@@ -22,3 +22,12 @@ test('mês todo foi usado', () => {
 		100,
 	])).toBe(100)
 })
+
+test('usando 0', () => {
+	expect(VerificarPlano(100, 4, [
+		0,
+		0,
+		0,
+		0,
+	])).toBe(400)
+})
