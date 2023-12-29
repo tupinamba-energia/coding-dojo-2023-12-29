@@ -22,5 +22,9 @@ export default function VerificarPlano(quotaMensal: number, meses: number, mbUsa
 	if (meses === 3) {
 		return 28
 	}
+
+
+
+  
 	return 130
 }	
