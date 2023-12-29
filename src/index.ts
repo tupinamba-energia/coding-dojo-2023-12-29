@@ -5,9 +5,7 @@ export default function VerificarPlano(quotaMensal: number, meses: number, mbUsa
 	// 	quotaMensal - usado
 	// }
 	let used = mbUsados.map(u => quotaMensal - u)
-	console.log(used)
 	let x = Array(meses).fill(0)
-	console.log(x)
 	let z =	used.every(y => {
 		if(y == 0){
 			return true
@@ -16,8 +14,6 @@ export default function VerificarPlano(quotaMensal: number, meses: number, mbUsa
 	if (z) {
 		return quotaMensal
 	}
-
-
 
 	if (meses === 3) {
 		return 28
@@ -37,5 +33,5 @@ export default function VerificarPlano(quotaMensal: number, meses: number, mbUsa
 	sobrou[1] = sobrou[0] + quotaMensal - usadoMesAtual
 	proximoMes[1] = sobrou[1] + quotaMensal
 
-	return proximoMes[1]
+	return proximoMes[meses -1]
 }
