@@ -4,6 +4,13 @@ export default function VerificarPlano(quotaMensal: number, meses: number, mbUsa
 	// 	const usado = mbUsados[index];
 	// 	quotaMensal - usado
 	// }
+	let used = mbUsados.map(u => quotaMensal - u)
+	console.log(used)
+	if (used === Array(meses - 1).fill(0)) {
+		return quotaMensal
+	}
+
+
 	if (meses === 3) {
 		return 28
 	}
