@@ -1,4 +1,4 @@
-import { test, expect, it } from 'vitest';
+import { test, expect } from 'vitest';
 import VerificarPlano from '../src';
 
 test('usando acima da quota', () => {
@@ -23,15 +23,14 @@ test('mês todo foi usado', () => {
 	])).toBe(100)
 })
 
-// test('usando 0', () => {
-// 	expect(VerificarPlano(100, 4, [
-// 		0,
-// 		0,
-// 		0,
-// 		0,
-// 	])).toBe(400)
-
-// })
+test('usando 0', () => {
+	expect(VerificarPlano(100, 4, [
+		0,
+		0,
+		0,
+		0,
+	])).toBe(500)
+})
 
 test('cliente novo', () => {
 	expect(VerificarPlano(10, 0, [
